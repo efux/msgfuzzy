@@ -23,17 +23,23 @@ void FuzzyParser::addFile(std::string filename)
 void FuzzyParser::startSearch()
 {
 	// load every po-file
-	loadFiles();	
+	if(files.size()>0) {
+		loadFiles();	
+	} else {
+		std::cout << "msgfuzzy: no input files given" << std::endl
+		   << "Try `msgfuzzy --help` for more information." << std::endl;
+	}
 }
 
 void FuzzyParser::loadFiles()
 {
 	std::string line;
-	// open all the valid files submittes via arguments
+	// open all the valid files submitted via arguments
 	for(auto file : files) {
 		std::ifstream poFile(file);
 		if(poFile.is_open()) {
 			int row = 1 ;
+			// read all lines of this file
 			while(getline(poFile, line)) {
 
 				// if this line of the file contains msgid "..." add it to the vector

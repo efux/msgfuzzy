@@ -30,7 +30,7 @@ void print_usage()
 
 void parse_argument(const char* arg)
 {
-	if(strcmp(arg,"-h")==0) {
+	if(strcmp(arg,"-h")==0 || strcmp(arg,"--help")==0) {
 		print_usage();
 		return;
 	}
