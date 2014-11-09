@@ -1,5 +1,6 @@
 #include <map>
 #include <string>
+#include <iostream>
 #include "Levenshtein.h"
 
 Levenshtein::Levenshtein(std::string first, std::string second)

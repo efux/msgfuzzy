@@ -34,6 +34,10 @@ void parse_argument(const char* arg)
 		print_usage();
 		return;
 	}
+	if(strcmp(arg,"-a")==0) {
+		// print corrected po file to standard output
+		//TODO: print out
+	}
 
 	// the submitted argument has to be a file
 	fuzzyParser.addFile(arg) ;

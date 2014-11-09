@@ -11,6 +11,9 @@ class FuzzyParser {
 		std::vector<MsgIdEntry> entries;
 		void loadFiles();
 		bool isMsgIdLine(std::string line);
+		void compareMsgIds();
+		void printFuzzyEntries();
+		bool isMsgStrLine(std::string line);
 
 	public:
 		FuzzyParser () ;
